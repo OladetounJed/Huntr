@@ -20,6 +20,7 @@ $primary-color-light-grey: #f8f8f8;
 $secondary-color-grey: #707070;
 $secondary-color-green: #35b835;
 $secondary-color-light-grey: #888;
+$secondary-error-red: rgb(175, 63, 63);
 
 //Fonts
 
@@ -53,6 +54,22 @@ a {
 
 /*-----
 
+Mixins
+
+----*/
+
+@mixin message {
+  text-align: center;
+  color: $primary-color-light-grey;
+  width: 80%;
+  padding: 1.5em 0;
+  font-size: 0.8em;
+  margin: 2em auto;
+  border-radius: 0.5em;
+}
+
+/*-----
+
 Components
 
 ----*/
@@ -78,6 +95,24 @@ Components
   color: $primary-color-pink;
 }
 
+.confirm {
+  background-color: $primary-color-green;
+  @include message();
+}
+.remove {
+  display: none;
+}
+
+.error {
+  background-color: $secondary-error-red;
+  @include message();
+}
+
+/*------
+
+Desktop Styles
+
+------*/
 .header {
   &__illust {
     position: absolute;
@@ -197,8 +232,7 @@ Components
     position: absolute;
     top: 60%;
   }
-  &__icon-con {
-  }
+
   &__icon {
     width: 2em;
   }
@@ -355,6 +389,7 @@ Login Styles
     }
   }
   &__con {
+    position: relative;
     margin: 2em 0;
     width: 50%;
   }
@@ -390,6 +425,16 @@ Login Styles
   &__alert {
     text-align: center;
     color: $secondary-color-light-grey;
+  }
+  &__error {
+    text-align: center;
+    background-color: $secondary-error-red;
+    color: $primary-color-light-grey;
+    width: 80%;
+    padding: 1.5em 0;
+    font-size: 0.8em;
+    margin: 2em auto;
+    border-radius: 0.5em;
   }
 }
 

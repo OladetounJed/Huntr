@@ -31,6 +31,11 @@ a {
 
 /*-----
 
+Mixins
+
+----*/
+/*-----
+
 Components
 
 ----*/
@@ -50,6 +55,34 @@ Components
   font-weight: 900;
   color: #f261b4; }
 
+.confirm {
+  background-color: #16c484;
+  text-align: center;
+  color: #f8f8f8;
+  width: 80%;
+  padding: 1.5em 0;
+  font-size: 0.8em;
+  margin: 2em auto;
+  border-radius: 0.5em; }
+
+.remove {
+  display: none; }
+
+.error {
+  background-color: #af3f3f;
+  text-align: center;
+  color: #f8f8f8;
+  width: 80%;
+  padding: 1.5em 0;
+  font-size: 0.8em;
+  margin: 2em auto;
+  border-radius: 0.5em; }
+
+/*------
+
+Desktop Styles
+
+------*/
 .header__illust {
   position: absolute;
   right: 0;
@@ -270,6 +303,7 @@ Login Styles
       object-fit: cover; }
   .login__con,
   .register__con {
+    position: relative;
     margin: 2em 0;
     width: 50%; }
   .login__header,
@@ -302,6 +336,16 @@ Login Styles
   .register__alert {
     text-align: center;
     color: #888; }
+  .login__error,
+  .register__error {
+    text-align: center;
+    background-color: #af3f3f;
+    color: #f8f8f8;
+    width: 80%;
+    padding: 1.5em 0;
+    font-size: 0.8em;
+    margin: 2em auto;
+    border-radius: 0.5em; }
 
 /* -----
 
