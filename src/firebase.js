@@ -8,6 +8,7 @@
    */
 
   import firebase from "firebase";
+  import store from "./store";
 
   const firebaseConfig = {
     apiKey: "AIzaSyCY91F4lITWC3tE36sG1Odpz__oU483DeM",
@@ -21,6 +22,10 @@
   };
   
   let fb = firebase.initializeApp(firebaseConfig);
+
+  firebase.auth().onAuthStateChanged(user => {
+    store.dispatch("fetchUser", user);
+  });
 
   
   export default fb;
