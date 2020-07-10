@@ -15,6 +15,7 @@
           placeholder="Your Name"
           v-model="form.name"
           required
+          autocomplete="name"
         />
         <input
           type="email"
@@ -22,6 +23,7 @@
           placeholder="Email Address"
           v-model="form.email"
           required
+          autocomplete="email"
         />
         <input
           type="password"
@@ -30,17 +32,13 @@
           v-model="form.password"
           required
         />
-        <input
-        type="submit"
-          value="Sign In"
-          class="register__submit"
-          
-        />
+        <input type="submit" value="Sign In" class="register__submit" />
       </form>
       <p class="register__alert">
         Have an Account?
         <router-link to="/login">Log In</router-link>
       </p>
+      <notifications group="foo" position="bottom center" />
     </div>
   </div>
 </template>
@@ -48,6 +46,7 @@
 <script>
 import sideImage from "../components/sideImage";
 import fb from "../firebase";
+import { mapGetters } from "vuex";
 export default {
   data() {
     return {
@@ -55,11 +54,25 @@ export default {
         name: "",
         email: "",
         password: ""
-      }
+      },
+      message: "",
+      messageClass: "",
+      show: ""
     };
+  },
+  watch: {
+    show: function() {
+      if (this.show === true) {
+      }
+    }
   },
   components: {
     sideImage
+  },
+  computed: {
+    ...mapGetters({
+      user: "user"
+    })
   },
   methods: {
     submit() {
@@ -70,14 +83,53 @@ export default {
             .updateProfile({
               displayName: this.form.name
             })
-            .then(() => {});
+            .then(data => {
+              this.form.email = "";
+              this.form.name = "";
+              this.form.password = "";
+              this.$notify({
+                group: "foo",
+                type: "success",
+                text: "Account Created Sucessfully, Kindly Login"
+              });
+            });
         })
-       
-
-        console.log(this.form)
+        .catch(err => {
+          this.message = err.message;
+          this.$notify({
+            group: "foo",
+            type: "error",
+            text: this.message
+          });
+        });
     }
   }
 };
 </script>
 
-<style></style>
+<style lang="scss">
+.vue-notification {
+  padding: 20px;
+  right: 6em;
+  width: 100%;
+  font-size: 14px;
+
+  color: #ffffff;
+  background: #44a4fc;
+  border-left: none;
+
+  &.warn {
+    background: #ffb648;
+    border-left-color: #f48a06;
+  }
+
+  &.error {
+    background: #e54d42;
+  }
+
+  &.success {
+    background: #68cd86;
+    border-left-color: #42a85f;
+  }
+}
+</style>

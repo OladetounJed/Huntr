@@ -9,19 +9,29 @@
           >
           <h3 class="login__heading">Need a job? Login</h3>
         </div>
-        <form action="" class="login__form" @submit.prevent="submit">
-          <input type="text" class="login__email" placeholder="Email Address" />
+        <form action="login" class="login__form" @submit.prevent="submit">
+          <input
+            type="email"
+            class="login__email"
+            placeholder="Email Address"
+            v-model="form.email"
+            autocomplete="email"
+          />
           <input
             type="password"
             class="login__password"
             placeholder="Password"
+            v-model="form.password"
+            required
+            
           />
-          <input type="submit" value="Sign In" class="login__submit" />
+          <input type="submit" value="Sign In" class="login__submit" required />
         </form>
         <p class="login__alert">
           Don't have an account?
           <router-link to="/register">Sign Up</router-link>
         </p>
+       <notifications group="foo" position="bottom center"/>
       </div>
     </div>
   </div>
@@ -29,11 +39,64 @@
 
 <script>
 import sideImage from "../components/sideImage";
+import fb from "../firebase";
+import { action } from "vuex";
 export default {
+  data() {
+    return {
+      form: {
+        email: "",
+        password: ""
+      },
+      error: null
+    };
+  },
+
   components: {
     sideImage
+  },
+  methods: {
+    submit() {
+      fb.auth()
+        .signInWithEmailAndPassword(this.form.email, this.form.password)
+        .then(data => {
+          this.$router.replace({ name: "Dashboard" });
+        })
+        .catch(err => {
+          this.error = err.message;
+          this.$notify({
+            group: "foo",
+            type: "error",
+            text: this.error
+          });
+        });
+    }
   }
 };
 </script>
+<style lang="scss">
+.vue-notification {
+  padding: 20px;
+  right: 6em;
+  width: 100%;
+  font-size: 14px;
 
-<style></style>
+  color: #ffffff;
+  background: #44a4fc;
+  border-left: none;
+
+  &.warn {
+    background: #ffb648;
+    border-left-color: #f48a06;
+  }
+
+  &.error {
+    background: #e54d42;
+  }
+
+  &.success {
+    background: #68cd86;
+    border-left-color: #42a85f;
+  }
+}
+</style>
