@@ -12,26 +12,30 @@
         <form action="login" class="login__form" @submit.prevent="submit">
           <input
             type="email"
-            class="login__email"
+            class="login__email animate__animated animate__fadeInUp"
             placeholder="Email Address"
             v-model="form.email"
             autocomplete="email"
           />
           <input
             type="password"
-            class="login__password"
+            class="login__password animate__animated animate__fadeInUp"
             placeholder="Password"
             v-model="form.password"
             required
-            
           />
-          <input type="submit" value="Sign In" class="login__submit" required />
+          <input
+            type="submit"
+            value="Sign In"
+            class="login__submit animate__animated animate__shakeX"
+            required
+          />
         </form>
         <p class="login__alert">
           Don't have an account?
           <router-link to="/register">Sign Up</router-link>
         </p>
-       <notifications group="foo" position="bottom center"/>
+        <notifications group="foo" position="bottom center" />
       </div>
     </div>
   </div>

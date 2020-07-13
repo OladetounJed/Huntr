@@ -11,7 +11,7 @@
       <form action="" class="register__form" @submit.prevent="submit">
         <input
           type="text"
-          class="register__name"
+          class="register__name animate__animated animate__fadeInUp"
           placeholder="Your Name"
           v-model="form.name"
           required
@@ -19,7 +19,7 @@
         />
         <input
           type="email"
-          class="register__email"
+          class="register__email animate__animated animate__fadeInUp"
           placeholder="Email Address"
           v-model="form.email"
           required
@@ -27,12 +27,12 @@
         />
         <input
           type="password"
-          class="register__password"
+          class="register__password animate__animated animate__fadeInUp"
           placeholder="Password"
           v-model="form.password"
           required
         />
-        <input type="submit" value="Sign In" class="register__submit" />
+        <input type="submit" value="Register" class="register__submit animate__animated animate__shakeY" />
       </form>
       <p class="register__alert">
         Have an Account?

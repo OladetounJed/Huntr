@@ -29,6 +29,12 @@ $secondary-font: "Poppins";
 
 /*---
 
+Animations
+
+--*/
+
+/*---
+
 Reset CSS
 
 --*/
@@ -415,10 +421,20 @@ Login Styles
       background-color: $primary-color-light-grey;
       outline: none;
       color: $secondary-color-grey;
+      animation-duration: 1s;
+
+      &:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+
+      &:nth-child(3) {
+        animation-delay: 0.5s;
+      }
 
       &:last-child {
         color: $primary-color-smokewhite;
         background-color: $primary-color-black;
+        animation-delay: 0.5s;
       }
     }
   }
