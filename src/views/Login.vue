@@ -27,7 +27,7 @@
           <input
             type="submit"
             value="Sign In"
-            class="login__submit animate__animated animate__shakeX"
+            class="login__submit animate__animated animate__shakeY"
             required
           />
         </form>
@@ -45,6 +45,7 @@
 import sideImage from "../components/sideImage";
 import fb from "../firebase";
 import { action } from "vuex";
+import store from "../store";
 export default {
   data() {
     return {
@@ -59,12 +60,16 @@ export default {
   components: {
     sideImage
   },
+  created() {},
   methods: {
     submit() {
       fb.auth()
         .signInWithEmailAndPassword(this.form.email, this.form.password)
         .then(data => {
-          this.$router.replace({ name: "Dashboard" });
+         
+          fb.auth().onAuthStateChanged(user => {
+            store.dispatch("fetchUser", user);
+          });
         })
         .catch(err => {
           this.error = err.message;

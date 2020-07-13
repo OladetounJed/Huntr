@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Store from '../store/index'
 import Home from '../views/Home.vue'
 import Login from '../views/Login'
 import Register from '../views/Register'
@@ -26,8 +27,21 @@ Vue.use(VueRouter)
   {
     path: '/dashboard',
     name: 'Dashboard',
-    component: Dashboard
+    component: Dashboard,
+    beforeEnter(to, from, next) {
+      if (Store.state.user.loggedIn === true) {
+        console.log(Store.state.user)
+        console.log("Entered")
+        next()
+      } else {
+        next("/")
+      }
+    }
   },
+  {
+    path: '*',
+    redirect: '/'
+  }
  
 ]
 

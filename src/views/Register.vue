@@ -75,8 +75,8 @@ export default {
     })
   },
   methods: {
-    submit() {
-      fb.auth()
+    async submit() {
+      const user = fb.auth()
         .createUserWithEmailAndPassword(this.form.email, this.form.password)
         .then(data => {
           data.user
@@ -92,6 +92,7 @@ export default {
                 type: "success",
                 text: "Account Created Sucessfully, Kindly Login"
               });
+              
             });
         })
         .catch(err => {
@@ -102,6 +103,7 @@ export default {
             text: this.message
           });
         });
+        console.log(user)
     }
   }
 };

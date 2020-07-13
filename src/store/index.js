@@ -1,7 +1,8 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from "vue";
+import Vuex from "vuex";
+import router from "../router";
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
@@ -11,8 +12,8 @@ export default new Vuex.Store({
     }
   },
   getters: {
-    user(state){
-      return state.user
+    user(state) {
+      return state.user;
     }
   },
   mutations: {
@@ -21,6 +22,7 @@ export default new Vuex.Store({
     },
     SET_USER(state, data) {
       state.user.data = data;
+      router.push("/dashboard");
     }
   },
   actions: {
@@ -31,9 +33,7 @@ export default new Vuex.Store({
           displayName: user.displayName,
           email: user.email
         });
-      } else {
-        commit("SET_USER", null);
-      }
+      } 
     }
   }
-})
+});
