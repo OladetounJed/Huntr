@@ -7,7 +7,7 @@
           <a href="#" class="header__logo logo animate__animated animate__bounceInDown">huntr</a>
         </div>
         <div
-          class="header__navbar-mobile animate__animated animate__bounceInDown"
+          class="header__navbar-mobile animate__animated animate__rotateInUpRight"
           v-bind:style="navStyle"
         >
           <img

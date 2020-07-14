@@ -325,7 +325,6 @@ Login Styles
     width: 50%; }
   .login__header,
   .register__header {
-    font-size: 1.5em;
     text-align: center; }
   .login__heading,
   .register__heading {
@@ -360,7 +359,6 @@ Login Styles
       animation-delay: 0.5s; }
   .login__alert,
   .register__alert {
-    font-size: 1.4em;
     text-align: center;
     color: #888; }
   .login__error,
@@ -380,7 +378,7 @@ Dashboard Styles
 
 ---------*/
 .dashboard-header__navbar {
-  padding: 2em 4em;
+  padding: 2em;
   display: flex;
   justify-content: space-between; }
   .dashboard-header__navbar-right {
@@ -511,6 +509,9 @@ Mobile Responsivness
   .login,
   .register {
     margin: 5em 0; }
+    .login__header,
+    .register__header {
+      font-size: 1.5em; }
     .login__side,
     .register__side {
       display: none; }
@@ -519,7 +520,13 @@ Mobile Responsivness
       width: 100%; }
     .login__form input,
     .register__form input {
-      width: 80%; } }
+      width: 80%; }
+    .login__alert,
+    .register__alert {
+      font-size: 1.4em; }
+  .dashboard-header__btn {
+    font-size: 1em;
+    margin-top: -0.8em; } }
 
 @media (min-width: 500px) and (max-width: 990px) {
   .header__illust {

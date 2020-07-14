@@ -412,7 +412,6 @@ Login Styles
     width: 50%;
   }
   &__header {
-    font-size: 1.5em;
     text-align: center;
   }
   &__heading {
@@ -452,7 +451,6 @@ Login Styles
     }
   }
   &__alert {
-    font-size: 1.4em;
     text-align: center;
     color: $secondary-color-light-grey;
   }
@@ -476,7 +474,7 @@ Dashboard Styles
 
 .dashboard-header {
   &__navbar {
-    padding: 2em 4em;
+    padding: 2em;
     display: flex;
     justify-content: space-between;
 
@@ -663,6 +661,10 @@ Mobile Responsivness
   .login,
   .register {
     margin: 5em 0;
+
+    &__header {
+      font-size: 1.5em;
+    }
     &__side {
       display: none;
     }
@@ -673,6 +675,17 @@ Mobile Responsivness
       input {
         width: 80%;
       }
+    }
+    &__alert {
+      font-size: 1.4em;
+    }
+  }
+  .dashboard-header {
+    &__btn {
+      font-size: 1em;
+      margin-top: -0.8em;
+    }
+    &__logo {
     }
   }
 }
