@@ -1,0 +1,37 @@
+[debug] [2020-07-14T14:01:53.206Z] ----------------------------------------------------------------------
+[debug] [2020-07-14T14:01:53.220Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Jed's Asus\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2020-07-14T14:01:53.221Z] CLI Version:   8.5.0
+[debug] [2020-07-14T14:01:53.222Z] Platform:      win32
+[debug] [2020-07-14T14:01:53.223Z] Node Version:  v12.13.0
+[debug] [2020-07-14T14:01:53.233Z] Time:          Tue Jul 14 2020 15:01:53 GMT+0100 (West Africa Standard Time)
+[debug] [2020-07-14T14:01:53.234Z] ----------------------------------------------------------------------
+[debug] [2020-07-14T14:01:53.235Z] 
+[debug] [2020-07-14T14:01:53.317Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-07-14T14:01:53.324Z] > authorizing via signed-in user
+[debug] [2020-07-14T14:01:53.328Z] [iam] checking project huntrjob for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-07-14T14:01:53.346Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-07-14T14:01:53.363Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-07-14T14:01:56.960Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 14 Jul 2020 14:01:39 GMT","server":"scaffolding on HTTPServer2","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-07-14T14:01:56.986Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/huntrjob:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2020-07-14T14:01:59.396Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 14 Jul 2020 14:01:43 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=1121","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-07-14T14:01:59.403Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/huntrjob  
+ 
+[debug] [2020-07-14T14:02:01.232Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 14 Jul 2020 14:01:44 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] === Deploying to 'huntrjob'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2020-07-14T14:02:01.253Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/huntrjob/versions  
+ {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2020-07-14T14:02:04.123Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 14 Jul 2020 14:01:47 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting[huntrjob]: beginning deploy... 
+[info] i  hosting[huntrjob]: found 30 files in dist 
+[debug] [2020-07-14T14:02:05.752Z] [hosting] hash cache [ZGlzdA] stored for 30 files
+[debug] [2020-07-14T14:02:05.754Z] [hosting][hash queue][FINAL] {"max":1364,"min":138,"avg":226.73333333333332,"active":0,"complete":30,"success":30,"errored":0,"retried":0,"total":30,"elapsed":1476}
+[debug] [2020-07-14T14:02:05.759Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/huntrjob/versions/d768d8c4c23e5879:populateFiles  
+ <request body omitted>
+[debug] [2020-07-14T14:02:08.085Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 14 Jul 2020 14:01:51 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-07-14T14:02:08.124Z] [hosting][populate queue][FINAL] {"max":2365,"min":2365,"avg":2365,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":2395}
+[debug] [2020-07-14T14:02:08.126Z] [hosting] uploads queued: 8
