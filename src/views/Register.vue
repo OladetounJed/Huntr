@@ -35,7 +35,7 @@
         <input
           type="submit"
           value="Register"
-          class="register__submit animate__animated animate__shakeY"
+          class="register__submit animate__animated animate__shakeX"
         />
       </form>
       <p class="register__alert">

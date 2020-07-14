@@ -1,20 +1,44 @@
 <template>
   <div class="home">
-     
     <header class="header">
-      <img src="../assets/images/mask2.png" alt="" class="header__illust">
+      <img src="../assets/images/mask2.png" alt="" class="header__illust" />
       <div class="header__navbar">
         <div class="header__navbar-left">
           <a href="#" class="header__logo logo">huntr</a>
         </div>
-        <div class="header__navbar-middle">
-          <a href="#" class="header__link">Get Jobs</a>
-          <a href="#" class="header__link">Post Jobs</a>
+        <div
+          class="header__navbar-mobile animate__animated animate__shakeX"
+          v-bind:style="navStyle"
+        >
+          <img
+            src="../assets/images/close.svg"
+            alt=""
+            class="header__close close"
+            @click="closeNav"
+          />
+          <div class="header__navbar-middle">
+            <a href="#" class="header__link">Get Jobs</a>
+            <a href="#" class="header__link">Post Jobs</a>
+          </div>
+          <div class="header__navbar-right">
+            <router-link to="/login" class=" btn btn--small header__btn"
+              >Log In</router-link
+            >
+            <router-link
+              to="/register"
+              href="#"
+              class="btn btn--small header__btn btn--active"
+              >Sign Up</router-link
+            >
+          </div>
         </div>
-        <div class="header__navbar-right">
-          <router-link to="/login" class=" btn btn--small header__btn">Log In</router-link>
-          <router-link to="/register" href="#" class="btn btn--small header__btn btn--active">Sign Up</router-link>
-        </div>
+
+        <img
+          src="../assets/images/menu.svg"
+          alt=""
+          class="header__menu menu"
+          @click="openNav"
+        />
       </div>
       <div class="header__content">
         <img
@@ -23,50 +47,46 @@
           class="header__illust--small"
         />
         <div class="header__info">
-        <h3 class="header__heading--small">Get Started</h3>
-        <h1 class="header__heading--big">Find Your Dream Job</h1>
-        <p class="header__paragraph">
-          We will boost your skills and profile, provide you with personalised
-          career guidance and match you with the right opportunities, so that
-          you can be the Best and the Brightest.
-        </p>
+          <h3 class="header__heading--small">Get Started</h3>
+          <h1 class="header__heading--big">Find Your Dream Job</h1>
+          <p class="header__paragraph">
+            We will boost your skills and profile, provide you with personalised
+            career guidance and match you with the right opportunities, so that
+            you can be the Best and the Brightest.
+          </p>
         </div>
       </div>
     </header>
     <section class="filter">
       <form action="" class="filter__form">
-          <input
+        <input
           type="text"
           class="filter__search"
           placeholder="Job Title or Keyword"
         />
         <span><button class="filter__button">Search</button></span>
       </form>
-      
     </section>
     <section class="job">
       <h1 class="job__heading">Latest Job</h1>
       <div class="job__con">
-          <div class="job__child" v-for="job in jobs">
-              <p class="job__title">{{ job.title }}</p>
-              <div class="job__details">
-                   <p class="job__location">{{ job.location }}</p>
-           <p class="job__time">{{job.published_at.for_humans}}</p>
-              </div>
-             
-              <div class="job__company">
-                <img :src="job.company.avatar" alt="" class="job__icon" />
-                <p class="job__name">{{ job.company.name}}</p>
-                
-              </div>
-             
-              <router-link to="/login"><button href="#" class="job__apply">Apply Now</button></router-link>
-            </div>
+        <div class="job__child" v-for="job in jobs">
+          <p class="job__title">{{ job.title }}</p>
+          <div class="job__details">
+            <p class="job__location">{{ job.location }}</p>
+            <p class="job__time">{{ job.published_at.for_humans }}</p>
+          </div>
 
+          <div class="job__company">
+            <img :src="job.company.avatar" alt="" class="job__icon" />
+            <p class="job__name">{{ job.company.name }}</p>
+          </div>
 
-         
+          <router-link to="/login"
+            ><button href="#" class="job__apply">Apply Now</button></router-link
+          >
+        </div>
       </div>
-      
     </section>
     <section class="category">
       <h1 class=" heading category__heading--big">Job Category</h1>
@@ -98,13 +118,13 @@
     </section>
     <section class="about">
       <div class="about__img-con">
-          <img
+        <img
           src="../assets/images/brooke-cagle-g1Kr4Ozfoac-unsplash.png"
           alt=""
           class="about__img"
         />
       </div>
-     
+
       <div class="about__con">
         <h1 class="about__heading">We will help you get your dream job easy</h1>
         <p class="about__paragraph">
@@ -146,35 +166,36 @@
         </p>
       </div>
     </footer>
-
   </div>
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     return {
-      jobs: []
-    }
+      jobs: [],
+      navStyle: {}
+    };
   },
 
   mounted() {
-    this.fetchUsers()
-  }, 
+    this.fetchUsers();
+  },
   methods: {
-    fetchUsers: function () {
-      const baseURI = 'https://vuejobs.com/api/jobs'
-         this.$http.get(baseURI)
-      .then((result) => {
+    fetchUsers() {
+      const baseURI = "https://vuejobs.com/api/jobs";
+      this.$http.get(baseURI).then(result => {
         this.jobs = result.data;
-      })
+      });
+    },
+    openNav() {
+      this.navStyle = { display: "block" };
+    },
+    closeNav() {
+      this.navStyle = { display: "none" };
     }
   }
-}
-
-
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

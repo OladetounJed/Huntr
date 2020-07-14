@@ -84,6 +84,10 @@ Components
   margin: 2em auto;
   border-radius: 0.5em; }
 
+.menu {
+  width: 3em;
+  display: none; }
+
 /*------
 
 Desktop Styles
@@ -101,8 +105,11 @@ Desktop Styles
   padding: 2em 4em;
   display: flex;
   justify-content: space-between; }
-  .header__navbar-right {
-    z-index: 1; }
+  .header__navbar-mobile {
+    justify-content: space-between;
+    width: 60%;
+    z-index: 1;
+    display: flex; }
 
 .header__link {
   padding-left: 2em;
@@ -391,7 +398,8 @@ Mobile Responsivness
 -----*/
 @media (max-width: 990px) {
   .logo {
-    font-size: 1.5em; }
+    font-size: 2em;
+    padding: 0; }
   body {
     font-size: 10px;
     width: 100%; }
@@ -407,10 +415,31 @@ Mobile Responsivness
     margin: 0 auto; }
   .header__navbar {
     padding: 2em 2em; }
-    .header__navbar-right {
+    .header__navbar-mobile {
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100vh;
+      width: 100vw;
+      position: absolute;
+      background-color: #fafafa;
       display: none; }
-    .header__navbar-middle {
-      display: none; }
+      .header__navbar-mobile a {
+        padding: 0;
+        padding: 2em;
+        margin: 10em auto 5em auto;
+        display: block;
+        width: 10em;
+        text-align: center; }
+  .header .menu {
+    display: block;
+    padding: 0; }
+  .header .close {
+    position: absolute;
+    top: 2em;
+    right: 3em;
+    width: 3em; }
   .filter__form {
     width: 80%;
     margin: auto; }

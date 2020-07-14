@@ -34,7 +34,7 @@
                 
               </div>
              
-              <router-link to="/login"><button href="#" class="job__apply">Apply Now</button></router-link>
+              <a :href="job.url"><button href="#" class="job__apply">Apply Now</button></a>
             </div>
 
 

@@ -114,6 +114,10 @@ Components
   background-color: $secondary-error-red;
   @include message();
 }
+.menu {
+  width: 3em;
+  display: none;
+}
 
 /*------
 
@@ -137,8 +141,11 @@ Desktop Styles
     display: flex;
     justify-content: space-between;
 
-    &-right {
+    &-mobile {
+      justify-content: space-between;
+      width: 60%;
       z-index: 1;
+      display: flex;
     }
   }
 
@@ -494,7 +501,8 @@ Mobile Responsivness
 
 @media (max-width: 990px) {
   .logo {
-    font-size: 1.5em;
+    font-size: 2em;
+    padding: 0;
   }
   body {
     font-size: 10px;
@@ -519,13 +527,36 @@ Mobile Responsivness
     &__navbar {
       padding: 2em 2em;
 
-      &-right {
+      &-mobile {
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+        background-color: $primary-color-smokewhite;
         display: none;
+        a {
+          padding: 0;
+          padding: 2em;
+          margin: 10em auto 5em auto;
+          display: block;
+          width: 10em;
+          text-align: center;
+        }
       }
+    }
 
-      &-middle {
-        display: none;
-      }
+    .menu {
+      display: block;
+      padding: 0;
+    }
+    .close {
+      position: absolute;
+      top: 2em;
+      right: 3em;
+      width: 3em;
     }
   }
 
