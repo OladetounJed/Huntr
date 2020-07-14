@@ -46,6 +46,7 @@ import sideImage from "../components/sideImage";
 import fb from "../firebase";
 import { action } from "vuex";
 import store from "../store";
+import router from "../router";
 export default {
   data() {
     return {
@@ -66,10 +67,12 @@ export default {
       fb.auth()
         .signInWithEmailAndPassword(this.form.email, this.form.password)
         .then(data => {
-         
           fb.auth().onAuthStateChanged(user => {
             store.dispatch("fetchUser", user);
+            router.push("/dashboard");
           });
+          
+
         })
         .catch(err => {
           this.error = err.message;

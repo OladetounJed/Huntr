@@ -6,6 +6,10 @@ import Login from '../views/Login'
 import Register from '../views/Register'
 import Dashboard from '../views/Dashboard'
 
+
+import * as firebase from "firebase/app";
+import "firebase/auth";
+
 Vue.use(VueRouter)
 
   const routes = [
@@ -28,15 +32,14 @@ Vue.use(VueRouter)
     path: '/dashboard',
     name: 'Dashboard',
     component: Dashboard,
-    beforeEnter(to, from, next) {
-      if (Store.state.user.loggedIn === true) {
-        console.log(Store.state.user)
-        console.log("Entered")
-        next()
-      } else {
-        next("/")
-      }
-    }
+    meta: { requiresAuth: true }
+    // beforeEnter(to, from, next) {
+    //   if (Store.state.user.loggedIn === true) {
+    //     next()
+    //   } else {
+    //     next("/")
+    //   }
+    // }
   },
   {
     path: '*',
@@ -49,6 +52,16 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
-})
+});
+router.beforeEach((to, from, next) => {
+  const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+  const isAuthenticated = firebase.auth().currentUser;
+  console.log("isauthenticated", isAuthenticated);
+  if (requiresAuth && !isAuthenticated) {
+    next("/login");
+  } else {
+    next();
+  }
+});
 
 export default router

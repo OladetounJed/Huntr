@@ -87,6 +87,7 @@ Components
     padding: 1em 2em;
     color: $primary-color-pink;
     background-color: $primary-color-white;
+    cursor: pointer;
   }
 
   &--active {
@@ -451,6 +452,37 @@ Login Styles
     font-size: 0.8em;
     margin: 2em auto;
     border-radius: 0.5em;
+  }
+}
+
+/* -------
+
+Dashboard Styles
+
+---------*/
+
+.dashboard-header {
+  &__navbar {
+    padding: 2em 4em;
+    display: flex;
+    justify-content: space-between;
+
+    &-right {
+      display: flex;
+    }
+  }
+
+  &__link {
+    padding-left: 2em;
+    color: $primary-color-black;
+  }
+
+  &__btn {
+    margin-left: 2em;
+  }
+  &__note {
+    margin: 0.5em 4em 0em 0em;
+    color: $secondary-color-light-grey;
   }
 }
 

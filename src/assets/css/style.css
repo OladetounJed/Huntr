@@ -49,7 +49,8 @@ Components
   font-size: 0.8em;
   padding: 1em 2em;
   color: #f261b4;
-  background-color: #ffff; }
+  background-color: #ffff;
+  cursor: pointer; }
 
 .btn--active {
   background-color: #f261b4;
@@ -359,6 +360,29 @@ Login Styles
     font-size: 0.8em;
     margin: 2em auto;
     border-radius: 0.5em; }
+
+/* -------
+
+Dashboard Styles
+
+---------*/
+.dashboard-header__navbar {
+  padding: 2em 4em;
+  display: flex;
+  justify-content: space-between; }
+  .dashboard-header__navbar-right {
+    display: flex; }
+
+.dashboard-header__link {
+  padding-left: 2em;
+  color: #212121; }
+
+.dashboard-header__btn {
+  margin-left: 2em; }
+
+.dashboard-header__note {
+  margin: 0.5em 4em 0em 0em;
+  color: #888; }
 
 /* -----
 

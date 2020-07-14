@@ -22,7 +22,7 @@ export default new Vuex.Store({
     },
     SET_USER(state, data) {
       state.user.data = data;
-      router.push("/dashboard");
+      
     }
   },
   actions: {
@@ -33,7 +33,7 @@ export default new Vuex.Store({
           displayName: user.displayName,
           email: user.email
         });
-      } 
+      }
     }
   }
 });

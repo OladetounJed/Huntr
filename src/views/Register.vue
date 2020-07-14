@@ -32,7 +32,11 @@
           v-model="form.password"
           required
         />
-        <input type="submit" value="Register" class="register__submit animate__animated animate__shakeY" />
+        <input
+          type="submit"
+          value="Register"
+          class="register__submit animate__animated animate__shakeY"
+        />
       </form>
       <p class="register__alert">
         Have an Account?
@@ -76,7 +80,8 @@ export default {
   },
   methods: {
     async submit() {
-      const user = fb.auth()
+      const user = fb
+        .auth()
         .createUserWithEmailAndPassword(this.form.email, this.form.password)
         .then(data => {
           data.user
@@ -94,6 +99,7 @@ export default {
               });
               
             });
+           const signOut = fb.auth().signOut() 
         })
         .catch(err => {
           this.message = err.message;
@@ -103,7 +109,6 @@ export default {
             text: this.message
           });
         });
-        console.log(user)
     }
   }
 };

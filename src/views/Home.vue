@@ -166,7 +166,6 @@ export default {
       const baseURI = 'https://vuejobs.com/api/jobs'
          this.$http.get(baseURI)
       .then((result) => {
-        console.log(result.data)
         this.jobs = result.data;
       })
     }
