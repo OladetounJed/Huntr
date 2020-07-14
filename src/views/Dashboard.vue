@@ -8,17 +8,17 @@
     <section class="dashboard-header">
         <div class="dashboard-header__navbar">
         <div class="dashboard-header__navbar-left">
-          <a href="#" class="dashboard-header__logo logo">huntr</a>
+          <router-link to="/" class="dashboard-header__logo logo">huntr</router-link>
         </div>
        
         <div class="dashboard-header__navbar-right">
-           <p class="dashboard-header__note">Welcome, {{ user.data.displayName }}</p>
           <a @click="signOut"  class=" btn btn--small dashboard-header__btn btn--active">Log Out</a>
           
         </div>
       </div>
     </section>
-    <section class="job">
+     <h2 class="dashboard-header__note">Welcome, {{ user.data.displayName }}</h2>
+    <section class="dashboard-job job">
       <h1 class="dashboard-job__heading job__heading">Latest Job</h1>
       <div class="job__con">
           <div class="job__child" v-for="job in jobs">

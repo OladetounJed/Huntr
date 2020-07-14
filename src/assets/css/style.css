@@ -325,6 +325,7 @@ Login Styles
     width: 50%; }
   .login__header,
   .register__header {
+    font-size: 1.5em;
     text-align: center; }
   .login__heading,
   .register__heading {
@@ -359,6 +360,7 @@ Login Styles
       animation-delay: 0.5s; }
   .login__alert,
   .register__alert {
+    font-size: 1.4em;
     text-align: center;
     color: #888; }
   .login__error,
@@ -392,8 +394,14 @@ Dashboard Styles
   margin-left: 2em; }
 
 .dashboard-header__note {
-  margin: 0.5em 4em 0em 0em;
-  color: #888; }
+  margin: 3em 2em;
+  font-size: 1.3em;
+  color: #16c484; }
+
+.dashboard-job {
+  height: auto; }
+  .dashboard-job__heading {
+    color: #707070; }
 
 /* -----
 
@@ -427,15 +435,17 @@ Mobile Responsivness
       height: 100vh;
       width: 100vw;
       position: absolute;
+      position: fixed;
       background-color: #fafafa;
       display: none; }
       .header__navbar-mobile a {
         padding: 0;
         padding: 2em;
-        margin: 10em auto 5em auto;
+        margin: 5em auto 5em auto;
         display: block;
         width: 10em;
-        text-align: center; }
+        text-align: center;
+        font-size: 14px; }
   .header .menu {
     display: block;
     padding: 0; }

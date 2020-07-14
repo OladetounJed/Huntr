@@ -412,6 +412,7 @@ Login Styles
     width: 50%;
   }
   &__header {
+    font-size: 1.5em;
     text-align: center;
   }
   &__heading {
@@ -451,6 +452,7 @@ Login Styles
     }
   }
   &__alert {
+    font-size: 1.4em;
     text-align: center;
     color: $secondary-color-light-grey;
   }
@@ -492,8 +494,15 @@ Dashboard Styles
     margin-left: 2em;
   }
   &__note {
-    margin: 0.5em 4em 0em 0em;
-    color: $secondary-color-light-grey;
+    margin: 3em 2em;
+    font-size: 1.3em;
+    color: $primary-color-green;
+  }
+}
+.dashboard-job {
+  height: auto;
+  &__heading {
+    color: $secondary-color-grey;
   }
 }
 
@@ -539,15 +548,17 @@ Mobile Responsivness
         height: 100vh;
         width: 100vw;
         position: absolute;
+        position: fixed;
         background-color: $primary-color-smokewhite;
         display: none;
         a {
           padding: 0;
           padding: 2em;
-          margin: 10em auto 5em auto;
+          margin: 5em auto 5em auto;
           display: block;
           width: 10em;
           text-align: center;
+          font-size: 14px;
         }
       }
     }
