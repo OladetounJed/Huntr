@@ -4,10 +4,10 @@
       <img src="../assets/images/mask2.png" alt="" class="header__illust" />
       <div class="header__navbar">
         <div class="header__navbar-left">
-          <a href="#" class="header__logo logo">huntr</a>
+          <a href="#" class="header__logo logo animate__animated animate__bounceInDown">huntr</a>
         </div>
         <div
-          class="header__navbar-mobile animate__animated animate__shakeX"
+          class="header__navbar-mobile animate__animated animate__bounceInDown"
           v-bind:style="navStyle"
         >
           <img

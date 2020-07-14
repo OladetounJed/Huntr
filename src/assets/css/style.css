@@ -88,6 +88,9 @@ Components
   width: 3em;
   display: none; }
 
+.close {
+  display: none; }
+
 /*------
 
 Desktop Styles
@@ -96,6 +99,7 @@ Desktop Styles
 .header__illust {
   position: absolute;
   right: 0;
+  z-index: -1;
   top: -2em;
   width: 50%; }
   .header__illust--small {
@@ -436,6 +440,7 @@ Mobile Responsivness
     display: block;
     padding: 0; }
   .header .close {
+    display: block;
     position: absolute;
     top: 2em;
     right: 3em;

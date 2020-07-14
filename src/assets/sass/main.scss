@@ -118,6 +118,9 @@ Components
   width: 3em;
   display: none;
 }
+.close {
+  display: none;
+}
 
 /*------
 
@@ -128,6 +131,7 @@ Desktop Styles
   &__illust {
     position: absolute;
     right: 0;
+    z-index: -1;
     top: -2em;
     width: 50%;
 
@@ -553,6 +557,7 @@ Mobile Responsivness
       padding: 0;
     }
     .close {
+      display: block;
       position: absolute;
       top: 2em;
       right: 3em;
